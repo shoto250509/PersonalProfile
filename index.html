@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Tran Vu | Personal Profile</title> 
+        <meta charset="utf-8"> 
+        <meta name="Home description" content="Home"> 
+        <meta name="Keywords" content="Huong dan co ban"> 
+        <meta name="Authur" content="Huy Vu">
+        <meta name="Viewport" content="width=device-width,initial-scale=1.0"> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+        <link rel="icon" href="fingerprint.ico">
+        <style>
+            body 
+            {
+                margin: 0;
+                padding: 0;
+                height: 100dvh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: #111;
+                font-family: 'Montserrat', sans-serif;
+            }
+            .container 
+            {
+                width: 100%;
+                max-width: 5000px;
+                height: 700px;
+                position: relative;
+                border-radius: 20px;
+                overflow: hidden;
+            }
+            .background 
+            {
+                position: absolute;
+                inset: 0; 
+                
+                background-image: url("back.jpg");
+                background-size: cover;       
+                background-position: center; 
+                background-repeat: no-repeat;
+
+                filter: blur(8px) brightness(60%);
+                transform: scale(1.1);
+            }
+            .content 
+            {
+                position: relative;
+                z-index: 2;
+                color: white;
+                text-align: center;
+                top: 43%;
+                transform: translateY(-50%);
+            }
+            @media (max-width: 600px) 
+            {
+                .container {
+                    width: 95%;
+                    height: 85vh;
+                    border-radius: 15px;
+                }
+                h1 {
+                    font-size: 28px;
+                }
+                p {
+                    font-size: 16px;
+                }
+                .profile-header {
+                    height: 150px;
+                }
+                .avatar {
+                    width: 80px;
+                    height: 80px;
+                    bottom: -40px;
+                }
+            }
+            .about-box 
+            {
+                width: 80%;
+                max-width: 500px;
+                margin: 50px auto;
+                padding: 20px;
+
+                border-radius: 15px;
+
+                background: rgba(255, 255, 255, 0.1);
+
+                backdrop-filter: blur(10px);
+
+                border: 1px solid rgba(255,255,255,0.3);
+
+                box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+
+                color: white;
+                text-align: left;
+            }
+            .about-box h2 
+            {
+                margin-top: 0;
+                font-size: 20px;
+                letter-spacing: 1px;
+            }
+            .about-box p 
+            {
+                font-size: 13px;
+                opacity: 0.9;
+                line-height: 1.2;
+            }
+            .profile-header 
+            {
+                position: relative;
+                width: 100%;
+                height: 200px;
+                margin-bottom: 80px;
+            }
+            .cover 
+            {
+                width: 100%;
+                height: 100%;
+                background: url("cov.JPG") center/cover no-repeat;
+                border-radius: 15px;
+            }
+            .avatar 
+            {
+                position: absolute;
+                bottom: -50px; 
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 5px solid rgb(255, 255, 255);
+                box-shadow: 0 0 0 5px rgb(0, 217, 255);
+            }
+            .section 
+            {
+                font-size: 12px;
+                margin-bottom: 25px;
+                text-align: left;
+            }
+            .section h2 
+            {
+                font-size: 15px;
+                margin-bottom: 10px;
+                border-top: 1px solid rgba(255,255,255,0.3);
+                padding-top: 10px;
+            }
+            .contact-item 
+            {
+                margin: 8px 0;
+            }
+            .contact-item a 
+            {
+                color: #00c3ff;
+                text-decoration: none;
+                font-weight: 500;
+                transition: 0.2s;
+            }
+            .contact-item a:hover 
+            {
+                color: #fff;
+                text-shadow: 0 0 8px rgba(255,255,255,0.7);
+            }
+            .contact-list 
+            {
+                 display: flex;
+                justify-content: center; 
+                gap: 35px;
+            }
+            .contact-btn 
+            {
+                width: 10%;
+                max-width: 300px;
+
+                display: flex;
+                align-items: center;
+                justify-content: center; 
+
+                padding: 10px 20px;
+                border-radius: 100px;
+
+                color: white;
+                text-decoration: none;
+                font-size: 20px;
+
+                transition: 0.3s;
+            }
+            .fb 
+            {
+                background: #1877f2;
+            }
+            .ig 
+            {
+                background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
+            }
+            .tt 
+            {
+                background: black;
+            }
+            .contact-btn:hover 
+            {
+                transform: translateY(-5px) scale(1.1);
+                box-shadow: 0 5px 20px rgba(255,255,255,0.5);
+            }
+            .username 
+            {
+                position: absolute;
+                bottom: -102px;
+                left: 50%;
+                transform: translateX(-50%);
+
+                color: white;
+                font-size: 20px;
+                font-weight: 600;
+                text-shadow: 0 0 10px rgba(255,255,255,0.7);
+            }
+            .subname 
+            {
+                position: absolute;
+                bottom: -115px;
+                left: 50%;
+                transform: translateX(-50%);
+
+                font-size: 10x;
+                opacity: 0.7;
+            }
+            .about-content 
+            {
+                padding: 40px 20px 10px; 
+            }
+            /* text  */
+            @keyframes fadeInUp 
+            {
+                from 
+                {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                to 
+                {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            .fade-text 
+            {
+                opacity: 0;
+                animation: fadeInUp 2s ease forwards;
+            }
+            @keyframes SlideIn
+            {
+                from
+                {
+                    transform: translateY(-500px);
+                }
+                to
+                {
+                    transform: translateY(0);
+                }
+            }
+            @keyframes SlideIn-2
+            {
+                from
+                {
+                    transform: translateY(-1000px);
+                }
+                to
+                {
+                    transform: translateY(0);
+                }
+            }
+            .img
+            {
+                animation: SlideIn 1.5s ease-in-out forwards;
+            }
+            .img-2
+            {
+                animation: SlideIn-2 2.5s ease-in-out forwards;
+                /* animation-delay: 2s; */
+
+            }
+            /* typing  */
+            @keyframes typing 
+            {
+                0% 
+                {
+                    width: 0
+                }
+                30% 
+                {
+                    width: 6ch
+                }
+                70% 
+                {
+                    width: 6ch
+                }
+                100% 
+                {
+                    width: 0
+                }
+            }   
+            .type 
+            {
+                overflow: hidden;
+                white-space: nowrap;
+                border-right: 3px solid white;
+                width: 0;
+                animation: typing 4s steps(7) infinite, blink 1s infinite;
+            }
+            /* pop  */
+            .pop 
+            {
+                animation: pop 2s infinite;
+            }
+            @keyframes pop 
+            {
+                0% {
+                    transform: scale(.6);
+                    opacity: 0;
+                }
+                50% {
+                    transform: scale(1.1);
+                    opacity: 1;
+                }
+                100% {
+                    transform: scale(.6);
+                    opacity: 0;
+                }
+            }
+            /* wave  */
+            .wave span 
+            {
+                display: inline-block;
+                animation: wave 1.2s infinite;
+            }
+            .wave span:nth-child(2) {
+                animation-delay: .1s
+            }
+            
+            .wave span:nth-child(3) {
+                animation-delay: .2s
+            }
+            
+            .wave span:nth-child(4) {
+                animation-delay: .3s
+            }
+            
+            .wave span:nth-child(5) {
+                animation-delay: .4s
+            }
+            @keyframes wave 
+            {
+                0%,
+                100% 
+                {
+                    transform: translateY(0)
+                }
+                50% 
+                {
+                    transform: translateY(-15px)
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="background"> </div>
+            <div class="content"> 
+
+                <div class="about-box">
+                    <div class="profile-header">
+                        <div class="cover img"></div>
+                        <div class="img-2">
+                            <img src="avatar.jpg" class="avatar">
+                        </div>
+                        <div class="fade-text">
+                            <h3 class="username">Tran Vu</h3>
+                            <p class="subname">@shototran.09</p>
+                        </div>
+                    </div>
+                    
+                    <div class="about-content fade-text">
+                        <!-- ABOUT ME -->
+                        <div class="section">
+                            <h2>ABOUT ME</h2>
+                            <p>
+                                Hello, I’m Vu. My nick name is Shoto. I’m a high school student in Da Nang city, Viet Nam.
+                            </p>
+                            <p>
+                                I prefer playing sports and taking street photos.
+                            </p>
+                            <p>                                
+                                I love my family so much.
+                            </p>
+                        </div>
+
+                        <!-- CONTACT -->
+                        <div class="section">
+                            <h2>CONTACT</h2>
+                            <div class="contact-list">
+                                <a href="https://www.facebook.com/traanfvux.09" target="_blank" class="contact-btn fb">
+                                    <i class="fab fa-facebook-f wave"></i>
+                                </a>
+
+                                <a href="https://www.instagram.com/traanfvux.09" target="_blank" class="contact-btn ig">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                
+                                <a href="https://www.tiktok.com/@traanfvux" target="_blank" class="contact-btn tt">
+                                    <i class="fab fa-tiktok"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </body>
+</html>
